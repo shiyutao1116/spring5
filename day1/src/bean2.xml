@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="emp" class="bean.Employee" scope="prototype">
+            <property name="ename" value="syt"></property>
+            <property name="gender" value="boy"></property>
+            <property name="depart">
+                <bean id="dept" class="bean.Depart">
+                    <property name="dname" value="财务部"></property>
+
+                </bean>
+
+
+            </property>
+
+
+    </bean>
+    <bean id="emp1" class="bean.Employee" scope="singleton">
+        <property name="ename" value="syy"></property>
+        <property name="gender" value="boy"></property>
+        <property name="depart" ref="dep1"></property>
+        <property name="depart.dname" value="技术部"></property>
+
+    </bean>
+<bean id="dep1" class="bean.Depart">
+    <property name="dname" value="保安部"></property>
+</bean>
+
+</beans>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                            http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <util:list id="list1">
+        <value>1</value>
+        <value>2</value>
+    </util:list>
+<bean id="list2" class="list.list">
+    <property name="list" ref="list1"></property>
+
+
+</bean>
+
+
+
+
+
+
+    <bean id="list" class="list.list">
+        <property name="list">
+            <list>
+                <value>java</value>
+                <value>c++</value>
+            </list>
+        </property>
+<property name="map">
+    <map>
+        <entry key="1" value="hhh"></entry>
+    </map>
+</property>
+<property name="set">
+    <set>
+        <value>gg</value>
+
+    </set>
+</property>
+<property name="stus">
+    <list>
+        <ref bean="stu"></ref>
+        <ref bean="stu1"></ref>
+    </list>
+
+</property>
+    </bean>
+<bean id="stu" class="list.stu">
+    <property name="name" value="数学"></property>
+</bean>
+    <bean id="stu1" class="list.stu">
+        <property name="name" value="语文"></property>
+    </bean>
+
+
+</beans>
